@@ -95,4 +95,4 @@ sys.stdout.flush()
 
 if __name__=='__main__':
 	_ = CGoL()
-	#createGif()
+	createGif()
