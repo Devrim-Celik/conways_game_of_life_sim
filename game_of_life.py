@@ -5,6 +5,7 @@ plt.rcParams.update({'figure.max_open_warning': 0})
 
 from gifMaker import createGif
 
+#=====#=====#=====#=====#=====#=====#======#=====#=====#=====#=====#=====#=====#
 
 def start_cell(img_size, inital_prob):
 	# initial cell
@@ -12,6 +13,8 @@ def start_cell(img_size, inital_prob):
 	# set zeros and ones (after casting boolean to it)
 	cell = (cell < inital_prob).astype(int)
 	return cell
+
+#=====#=====#=====#=====#=====#=====#======#=====#=====#=====#=====#=====#=====#
 
 def update_cell(old_cell, img_size):
 	new_cell = np.copy(old_cell)
@@ -46,10 +49,9 @@ def update_cell(old_cell, img_size):
 
 	return new_cell
 
+#=====#=====#=====#=====#=====#=====#======#=====#=====#=====#=====#=====#=====#
 
-
-
-def GoL(img_size = 512, inital_prob = .6):
+def CGoL(img_size = 512, inital_prob = .6):
 	"""
 	Arguments:
 		img_size		Image Size will we (img_size x img_size)
@@ -77,6 +79,9 @@ def GoL(img_size = 512, inital_prob = .6):
 		progress(int(100*(i-400)/(250-1)))
 
 	return state_list
+
+#=====#=====#=====#=====#=====#=====#======#=====#=====#=====#=====#=====#=====#
+
 def progress(pg):
     if (pg != 100):
         sys.stdout.write('\r[*] Generation Progress: [{0}] {1}%'.format('#'*int(pg/2), pg))
@@ -86,7 +91,8 @@ def progress(pg):
 
 sys.stdout.flush()
 
+#=====#=====#=====#=====#=====#=====#======#=====#=====#=====#=====#=====#=====#
 
 if __name__=='__main__':
-	_ = GoL()
+	_ = CGoL()
 	#createGif()

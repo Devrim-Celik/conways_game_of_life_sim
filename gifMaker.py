@@ -1,14 +1,7 @@
 import os
 import imageio
 
-'''
-Function: Creates Gif using Images
-
-Usage: Provide
-	- (a path and) a name for the gif (with .gif as datatype)
-	- a path to folder, containing the images
-	- number of frames per second
-'''
+#=====#=====#=====#=====#=====#=====#======#=====#=====#=====#=====#=====#=====#
 
 def createGif(gif_name='./game_of_life.gif', image_path='./images', image_duration=0.10):
 
@@ -28,6 +21,8 @@ def createGif(gif_name='./game_of_life.gif', image_path='./images', image_durati
 	# remove all images
 	for f in file_list:
 	    os.remove(os.path.join(image_path, f))
+
+#=====#=====#=====#=====#=====#=====#======#=====#=====#=====#=====#=====#=====#
 
 if __name__=='__main__':
 	createGif()
